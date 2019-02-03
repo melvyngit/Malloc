@@ -4,7 +4,7 @@ CFLAGS		=	-I ./Include
 
 RM		=	rm -rf
 
-SRC		=	./src/main.c
+SRC		=	./src/malloc.c
 
 OBJ		=	$(SRC:.c=.o)
 
