@@ -1,25 +1,29 @@
-GCC		=	gcc
-
-CFLAGS		=	-I ./Include
+CC		=	gcc
 
 RM		=	rm -rf
 
-SRC		=	./src/malloc.c
+CFLAGS		=	-I ./Include
 
-OBJ		=	$(SRC:.c=.o)
+SRCS		=	./src/mutex_gestion.c		\
+			./src/chunk_management.c	\
+			./src/size_alignment.c		\
+			./src/malloc.c			\
+			./src/free.c
 
-CFLAGS		+=	-W -Wall -Wextra -fPIC
+OBJS		=	$(SRCS:.c=.o)
+
 CFLAGS		+=	-I ./include
+CFLAGS		+=	-W -Wall -Wextra -Werror -fPIC
 
 NAME		=	./libmy_malloc.so
 
 all:			$(NAME)
 
-$(NAME):		$(OBJ)
-			$(GCC) -shared -o $(NAME) $(OBJ)
+$(NAME):		$(OBJS)
+			$(CC) -shared -o $(NAME) $(OBJS)
 
 clean:
-			$(RM) $(OBJ)
+			$(RM) $(OBJS)
 
 fclean:			clean
 			$(RM) $(NAME)

@@ -1,30 +1,28 @@
-#ifndef MALLOC_H_
-#define MALLOC_H_
+#ifndef			MALLOC_H
+#define			MALLOC_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stddef.h>
-#include <pthread.h>
+#include		<unistd.h>
+#include		<stdlib.h>
+#include		<stddef.h>
+#include		<pthread.h>
 
-typedef struct chunkstruct_s {
-		size_t size;
-		char free;
-		struct chunkstruct_s *next;
-	} chunkstruct_t;
+typedef struct		chunkstruct_s
+{
+  size_t		size;
+  char			free;
+  struct chunkstruct_s	*next;
+}chunkstruct_t;
 
-	chunkstruct_t *first;
-	chunkstruct_t *last;
+chunkstruct_t		*first;
+chunkstruct_t		*last;
 
-pthread_mutex_t mutual_exclusion = PTHREAD_MUTEX_INITIALIZER;
-
-void mutual_exclusion_unlock(void);
-void mutual_exclusion_lock(void);
-size_t size_alignment(size_t size);
-chunkstruct_t *chunk_initialisation(size_t size, void *ptr, chunkstruct_t *chunk);
-chunkstruct_t *getting_free_chunk(size_t size);
-void *malloc(size_t size);
-void setting_last(void);
-void free(void *chunk);
-
+void			mutual_exclusion_unlock(void);
+void			mutual_exclusion_lock(void);
+size_t			size_alignment(size_t size);
+chunkstruct_t		*chunk_initialisation(size_t size, void *ptr, chunkstruct_t *chunk);
+chunkstruct_t		*getting_free_chunk(size_t size);
+void			*malloc(size_t size);
+void			setting_last(void);
+void			free(void *chunk);
 
 #endif
