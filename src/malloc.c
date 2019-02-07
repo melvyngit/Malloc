@@ -12,7 +12,7 @@
 
 void		*malloc(size_t size)
 {
-  chunkstruct_t	*chunk;
+  t_chunkstruct	*chunk;
   void		*ptr;
 
   if (size == 0)
@@ -22,7 +22,7 @@ void		*malloc(size_t size)
   chunk = getting_free_chunk(size);
   if (chunk != NULL)
     return (chunk);
-  ptr = sbrk(size + sizeof(chunkstruct_t));
+  ptr = sbrk(size + sizeof(t_chunkstruct));
   if (ptr == ((void *)-1))
     {
       mutual_exclusion_unlock();

@@ -12,7 +12,7 @@
 
 void		setting_last(void)
 {
-  chunkstruct_t	*temporary;
+  t_chunkstruct	*temporary;
 
   temporary = first;
   if (last != first)
@@ -36,18 +36,18 @@ void		setting_last(void)
 
 void		free(void *chunk)
 {
-  chunkstruct_t *new_chunk;
+  t_chunkstruct *new_chunk;
   void		*limit;
 
   if (chunk == NULL)
     return;
   mutual_exclusion_lock();
-  new_chunk = -1 + (chunkstruct_t *)chunk;
+  new_chunk = -1 + (t_chunkstruct *)chunk;
   limit = sbrk(0);
   if ((char *)chunk + new_chunk->size == limit)
     {
       setting_last();
-      sbrk(-sizeof(chunkstruct_t) - new_chunk->size);
+      sbrk(-sizeof(t_chunkstruct) - new_chunk->size);
       mutual_exclusion_unlock();
       return;
     }
