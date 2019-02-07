@@ -1,3 +1,13 @@
+##
+## Makefile for Malloc in /root/Malloc
+## 
+## Made by Melvyn Covindarassou
+## Login   <covind_m@etna-alternance.net>
+## 
+## Started on  Thu Feb  7 11:25:21 2019 Melvyn Covindarassou
+## Last update Thu Feb  7 11:26:13 2019 Melvyn Covindarassou
+##
+
 CC		=	gcc
 
 RM		=	rm -rf

@@ -1,3 +1,13 @@
+/*
+** chunk_management.c for Malloc in /root/Malloc/src
+** 
+** Made by Melvyn Covindarassou
+** Login   <covind_m@etna-alternance.net>
+** 
+** Started on  Thu Feb  7 11:22:38 2019 Melvyn Covindarassou
+** Last update Thu Feb  7 11:22:58 2019 Melvyn Covindarassou
+*/
+
 #include "malloc.h"
 
 chunkstruct_t	*chunk_initialisation(size_t size, void *ptr, chunkstruct_t *chunk)
