@@ -10,7 +10,8 @@
 
 #include "malloc.h"
 
-t_chunkstruct	*chunk_initialisation(size_t size, void *ptr, t_chunkstruct *chunk)
+t_chunkstruct	*chunk_initialisation(size_t size, void *ptr, 
+		t_chunkstruct *chunk)
 {
   chunk = ptr;
   chunk->free = 0;

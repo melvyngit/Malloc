@@ -5,7 +5,7 @@
 ** Login   <covind_m@etna-alternance.net>
 ** 
 ** Started on  Thu Feb  7 11:23:36 2019 Melvyn Covindarassou
-** Last update Thu Feb  7 11:23:48 2019 Melvyn Covindarassou
+** Last update Thu Feb  7 15:19:24 2019 Melvyn Covindarassou
 */
 
 #include "malloc.h"
@@ -23,7 +23,7 @@ void		*malloc(size_t size)
   if (chunk != NULL)
     return (chunk);
   ptr = sbrk(size + sizeof(t_chunkstruct));
-  if (ptr == ((void *)-1))
+  if (ptr == ((void *) - 1))
     {
       mutual_exclusion_unlock();
       return (NULL);
