@@ -21,7 +21,7 @@ typedef struct		s_chunkstruct
   size_t		size;
   char			free;
   struct s_chunkstruct	*next;
-}t_chunkstruct;
+}			t_chunkstruct;
 
 t_chunkstruct		*first;
 t_chunkstruct		*last;

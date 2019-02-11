@@ -14,6 +14,10 @@ RM		=	rm -rf
 
 CFLAGS		=	-I ./Include
 
+LNAME		=	libmy_malloc.so
+
+PWD		=	`pwd`
+
 SRCS		=	./src/mutex_gestion.c		\
 			./src/chunk_management.c	\
 			./src/size_alignment.c		\
@@ -25,18 +29,19 @@ OBJS		=	$(SRCS:.c=.o)
 CFLAGS		+=	-I ./include
 CFLAGS		+=	-W -Wall -Wextra -Werror -fPIC
 
-NAME		=	./libmy_malloc.so
+NAME		=	libmy_malloc_$(shell uname).so
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
 			$(CC) -shared -o $(NAME) $(OBJS)
+			ln -s $(PWD)/$(NAME) $(LNAME)
 
 clean:
-			$(RM) $(OBJS)
+			$(RM) $(OBJS) $(LNAME)
 
 fclean:			clean
-			$(RM) $(NAME)
+			$(RM) $(NAME) $(LNAME)
 
 re:			fclean all
 
