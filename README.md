@@ -1,8 +1,7 @@
 [PROJET MALLOC ETNA]
 
-*------------------------*
+
 | Introduction du projet |
-*-----------------------_*
 
 Le but principal du projet est de reprogrammer les fonctions malloc/free système
 qui permettent d'allouer et de libérer de la mémoire de façon dynamique.
