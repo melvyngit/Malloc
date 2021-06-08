@@ -1,26 +1,19 @@
 # PROJET MALLOC ETNA
 
 
-### Introduction du projet :
+### Project introduction :
 
-Le but principal du projet est de reprogrammer les fonctions malloc/free système
-qui permettent d'allouer et de libérer de la mémoire de façon dynamique.
-L'usage des fonctions brk et sbrk nous permettent de modifier la taille du
-segment de données.
+The main goal of the project is to reprogram the malloc / free system functions which allow to allocate and free memory dynamically. The use of the brk and sbrk functions allow us to modify the size of the data segment.
 <br />
 
-### Stratégie mise en place :
+### Strategy implemented :
 
-La stratégie adoptée est la méthode du "premier segment de donnée",
-aussi appeler "first fit".
-Cette solution est facile à implémenter, néanmoins, elle ne lutte pas
-contre la fragmentation et ne permet pas d'avoir les meilleures
-performances possibles. Cette méthode reste fiable néanmoins.
+The strategy adopted is the "first data segment" method, also called "first fit". This solution is easy to implement, however, it does not fight against fragmentation and does not provide the best possible performance. This method remains reliable nevertheless.
 <br />
 
-### Récapitulatif de la méthode :
+### Summary of the method :
 
-1) On parcoure les blocs
-2) On s'assure que le bloc contient suffisamment de donnée
-3) On s'assure que le bloc n'est pas déjà alloué
-4) On alloue selon la taille demandée par l'utilisateur
+1) Walk through the blocks
+2) Make sure that the block contains enough data
+3) Make sure that the block is not already allocated
+4) Allocate according to the size requested by the user
